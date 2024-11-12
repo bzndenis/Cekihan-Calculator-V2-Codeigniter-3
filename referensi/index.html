@@ -1,0 +1,185 @@
+<!DOCTYPE>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Cekihan GASS</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+	<link rel="stylesheet" href="style.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Autour One' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Black Han Sans' rel='stylesheet'>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app='myApp'>
+	<div id='header' class="container-fluid">
+		<img id='logo' src='logo.png'>
+	</div>
+
+	<div id='main' ng-controller='gameCtrl' class="container-fluid">
+		<div id='AddPersonForm' ng-show='showAddPlayer'>
+			<p id='addPlayerText'>Tambah Pemain</p>
+			<input ng-model='playerToAdd' type='text' id='AddPlayerInput'/>
+			<button id='AddPlayerButton' ng-click="addPlayer()">Tambah Pemain</button>
+			<br><br>
+			<button class='SillyButton' ng-click="startGame()">Gass Cekihan</button>
+			<br><br>
+			<table id='playerList' class="table table-striped">
+				<tr>
+					<th>
+						<td ng-repeat="player in playerList" class="fs-4 fw-bold">
+						({{player}})
+						</td>
+					</th>
+				</tr>				
+			</table>
+		</div>
+		<div id='Players' ng-show='showPlayerTable' class="container-fluid">
+			<table id='PlayerTable' class="table table-striped">
+				<tr id='PlayerTableLabels'>
+					<td class="fs-4">Pemain</td>
+					<td class="fs-4">Tambah/Kurangi Score</td>
+					<td class="fs-4">Total Score</td>
+				</tr>
+				<tr ng-repeat='player in playerList'>
+					<td class="fs-4">{{player}}</td>
+					<td class="fs-4"><input ng-model='addToScoreList[$index]' list="textminlist" class='ChangeScore form-control col-xs-2' type='number' onfocus="this.value=''" placeholder="Masukan Score">
+									<datalist id="textminlist">
+										<option value="5">
+										<option value="-5">
+										<option value="10">
+										<option value="-10">
+										<option value="15">
+										<option value="-15">
+										<option value="20">
+										<option value="-20">
+										<option value="25">
+										<option value="-25">
+										<option value="30">
+										<option value="-30">
+										<option value="35">
+										<option value="-35">
+										<option value="40">
+										<option value="-40">
+										<option value="45">
+										<option value="-45">
+										<option value="50">
+										<option value="-50">
+										<option value="55">
+										<option value="-55">
+										<option value="60">
+										<option value="-60">
+										<option value="65">
+										<option value="-65">
+										<option value="70">
+										<option value="-70">
+										<option value="75">
+										<option value="-75">
+										<option value="80">
+										<option value="-80">
+										<option value="85">
+										<option value="-85">
+										<option value="90">
+										<option value="-90">
+										<option value="95">
+										<option value="-95">
+										<option value="100">
+										<option value="-100">
+										<option value="105">
+										<option value="-105">
+										<option value="110">
+										<option value="-110">
+										<option value="115">
+										<option value="-115">
+										<option value="120">
+										<option value="-120">
+										<option value="125">
+										<option value="-125">
+										<option value="130">
+										<option value="-130">
+										<option value="135">
+										<option value="-135">
+										<option value="140">
+										<option value="-140">
+										<option value="145">
+										<option value="-145">
+										<option value="150">
+										<option value="-150">
+										<option value="155">
+										<option value="-155">
+										<option value="160">
+										<option value="-160">
+										<option value="165">
+										<option value="-165">
+										<option value="170">
+										<option value="-170">
+										<option value="175">
+										<option value="-175">
+										<option value="180">
+										<option value="-180">
+										<option value="185">
+										<option value="-185">
+										<option value="190">
+										<option value="-190">
+										<option value="195">
+										<option value="-195">
+										<option value="200">
+										<option value="-200">
+										<option value="205">
+										<option value="-205">
+										<option value="210">
+										<option value="-210">
+										<option value="215">
+										<option value="-215">
+										<option value="220">
+										<option value="-220">
+										<option value="225">
+										<option value="-225">
+										<option value="230">
+										<option value="-230">
+										<option value="235">
+										<option value="-235">
+										<option value="240">
+										<option value="-240">
+										<option value="245">
+										<option value="-245">
+										<option value="250">
+										<option value="-250">
+										<option value="500">
+										<option value="-500">		
+									</datalist>
+
+
+									 <button ng-click='addToScore(player, addToScoreList[$index])' class='ChangeScoreButton btn btn-primary' type="submit">Hitung</button></td>
+					<td ng-bind='playerMap.get(player)' class="fs-4 fw-bolder"></td>
+				</tr>
+			</table>	
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div class="countainer-fluid">
+				<div class="row">
+					<div class="col-md-6 align-self-center">
+						<button class='btn btn-danger' ng-click='endGame()'>Udahan</button>
+				
+					</div>
+				</div>	
+			</div>
+			
+		</div>
+
+		
+	
+		<div id='GameOver' ng-show='showEndGame'>
+			<br>
+			<p id='TheWinnerIs' class="fw-bold">SI PALING ERTE!!!</p>
+			<p id='Losers' ng-repeat='player in listOfLosers'>{{player}}</p><br><br>
+			
+
+			<p> <a class="SillyButton" href="http://koys.my.id/cekih/">Gass Lagi</a></p>
+			<p id='Winner' ng-bind='gameWinner'>Koys666</p>
+		</div>
+	</div>
+	<script type='text/javascript' src='./index.js'></script>
+	<script src="https://code.jquery.com/jquery-1.7.2.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

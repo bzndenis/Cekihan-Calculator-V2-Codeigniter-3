@@ -1,0 +1,201 @@
+body {
+	font-family: Noto Sans,Arial,sans-serif;
+  	margin: 0px;
+  	background-color: #e4f9ff;
+  	}
+#header {
+	background-color: #12cad6;
+}
+#logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#main {
+	background-color: #e4f9ff;
+	margin-top: 0px;
+	text-align: center;
+}
+#PlayerTable {
+	margin: auto;
+	width: 50%;
+	text-align: center;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-spacing: 20px;
+	font-size: 23px;
+}
+#PlayerTableLabels {
+	font-size: 30px;
+}
+.ChangeScore {
+	width: 80px;
+	background-color: #ff6666;
+	border-radius: 4px;
+	padding: 6px;
+	font-size: 20px;
+}
+
+
+
+.ChangeScoreButton {
+	background-color: #ff6666;
+	font-family: Impact, Charcoal, sans-serif;
+	padding: 6px;
+	margin-left: 15px;
+	font-size: 20px;
+}
+.ChangeScoreButton:hover {
+	background-color: #ff9999;
+}
+
+
+/* CSS */
+.SillyButton {
+  align-items: center;
+  background-color: #0A66C2;
+  border: 0;
+  border-radius: 100px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  max-width: 480px;
+  min-height: 40px;
+  min-width: 0px;
+  overflow: hidden;
+  padding: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+  touch-action: manipulation;
+  transition: background-color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s, color 0.167s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+}
+
+.SillyButton:hover,
+.SillyButton:focus { 
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+.SillyButton:active {
+  background: #09223b;
+  color: rgb(255, 255, 255, .7);
+}
+
+.SillyButton:disabled { 
+  cursor: not-allowed;
+  background: rgba(0, 0, 0, .08);
+  color: rgba(0, 0, 0, .3);
+}
+
+
+/* CSS */
+#AddPlayerButton {
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+#AddPlayerButton:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+#AddPlayerButton:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+#AddPersonForm {
+	padding-top: 50px;
+}
+#addPlayerText {
+	margin-top: 0px;
+	font-size: 30px;
+	font-family: "Courier New", Courier, monospace;
+}
+#AddPlayerInput {
+	background-color: #c2c2a3;
+	border-radius: 8px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 15px;
+	padding: 10px;
+}
+
+#playerList {
+	padding-top: 15px;
+	padding-left: 40%;
+	text-align: left;
+	font-size: 20px;
+}
+#Players {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+#GameOver {
+	padding-bottom: 20px;
+}
+#TheWinnerIs {
+	font-size: 25px;
+}
+#TheWinnerIs, .NotWinner {
+	font-family: 'Black Han Sans';
+}
+
+#TheLosersIs {
+	font-size: 35px;
+}
+#TheLosersIs, .NotWinner {
+	font-family: 'Black Han Sans';
+}
+
+.NotWinner {
+	font-size: 30px;
+}
+#Winner {
+	background-color: red;
+	position: relative;
+	animation-name: example;
+	animation-duration: 3s;
+	animation-iteration-count: 122;
+	font-family: 'Autour One';
+	font-size: 50px;
+	color: #000000;
+}
+@keyframes example {
+	0%   {background-color:red; left:0px; top:0px;}
+	25%  {background-color:yellow; left:50px; top:0px;}
+	50%  {background-color:blue; left:50px; top:50px;}
+	75%  {background-color:green; left:0px; top:50px;}
+	100% {background-color:red; left:0px; top:0px;}
+  }
+
+#Losers {
+	font-family: 'Autour One';
+	font-size: 50px;
+}
