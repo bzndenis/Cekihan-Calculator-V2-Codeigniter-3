@@ -14,8 +14,8 @@
                     ?>
                         <h4 class="text-center">Si Paling Erte:</h4>
                         <?php foreach($winners as $winner): ?>
-                            <h2 class="text-center text-success"><?= $winner ?></h2>
-                            <p class="text-center">Dengan skor: <?= $scores[$winner] ?></p>
+                            <h2 class="text-center text-success"><?= is_array($winner) ? implode(', ', $winner) : $winner ?></h2>
+                            <p class="text-center">Dengan skor: <?= is_array($scores[$winner]) ? $scores[$winner]['total'] : $scores[$winner] ?></p>
                         <?php endforeach; ?>
 
                         <h4 class="mt-4">Skor Akhir:</h4>
@@ -29,9 +29,9 @@
                             <tbody>
                                 <?php foreach($scores as $player => $score): ?>
                                     <tr>
-                                        <td><?= $player ?></td>
-                                        <td>
-                                            <?= $score ?>
+                                        <td><?= is_array($player) ? implode(', ', $player) : $player ?></td>
+                                            <td>
+                                                <?= is_array($score) ? $score['total'] : $score ?>
                                             <?php if($score == max($scores)): ?>
                                                 <i class="fas fa-crown text-warning"></i>
                                             <?php endif; ?>
