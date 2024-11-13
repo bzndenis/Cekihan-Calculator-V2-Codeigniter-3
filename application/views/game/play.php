@@ -15,7 +15,6 @@
                                     <th>Nama Pemain</th>
                                     <th>Skor Saat Ini</th>
                                     <th>Tambah Skor</th>
-                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
